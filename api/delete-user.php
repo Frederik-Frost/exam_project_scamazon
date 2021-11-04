@@ -1,11 +1,10 @@
 <?php
-$db = require_once('./db.php');
-
-
+require_once(__DIR__.'/../globals.php');
+$db = _api_db();
 try{
     $id = $_GET['id'];
     // echo 'Deleted user with id: '. $id;
-    $query = $db->prepare('DELETE FROM users WHERE user_id = :id');
+    $query = $db->prepare('DELETE FROM users WHERE id = :id');
     $query->bindValue(':id', $id);
     $query->execute();
     $response = 'Deleted '.$query->rowCount().' user with id: '.$id;

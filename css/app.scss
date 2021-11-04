@@ -1,0 +1,35 @@
+
+
+@use 'variables';
+@use 'login';
+@use 'nav';
+@use 'home';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-small {
+    font-weight: normal;
+    font-size: .7rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+}
+
+body {
+    background: white;
+    width: 100%;
+    height: calc(100vh - 7rem);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.main-container{
+    margin-top: 6rem;
+}

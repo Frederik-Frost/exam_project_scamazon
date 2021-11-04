@@ -3,16 +3,18 @@
     require_once(__DIR__.'/../components/header.php');
     session_start();
     
-    $user_name = $_SESSION['user_name'];
-    $user_last_name = $_SESSION['user_last_name'];
+
     $lang = $_GET['lang'] ?? 'en';
     require_once(__DIR__.'/../lang/dictionary.php');
     require_once(__DIR__.'/../components/nav.php');
 ?>  
       <!-- start div left and right  -->
-      <div id="main-container">
+      <div id="home" class="main-container">
         <section>
             left panel
+
+            <?= "hel" ?>
+            <?= $user_name ?>
         </section>
 
         <!-- items will appear -->

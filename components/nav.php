@@ -1,10 +1,12 @@
 <?php
+  $user_name = $_SESSION['user_name'];
+  $user_last_name = $_SESSION['user_last_name'];
   $lang = $_GET['lang'] ?? 'en';
   require_once(__DIR__.'/../lang/dictionary.php');
 ?>
 <nav>
     <div id="main-nav">
-      <div class="logo">Amazon</div>
+      <div class="logo"> <a href="/">Amazon</a></div>
       <div class="delivery" >📍<?= $text['1'][$lang] ?> </div>
       <div class="search-bar">
         <input type="text">
@@ -27,8 +29,11 @@
                </span>
             <div class="dropdown-content dropdown-signup">
                 <ul>
-                    <li><a href="login">Sign in</a></li>
+                    <li><a <?php echo isset($user_name) ? 'href="manage-account"' : 'href="login"'?>>
+                      <?php echo isset($user_name) ? 'Account' : 'Sign in'?>
+                    </a></li>
                     <li><a href="signup">New? sign up</a></li>
+                    <li><a href="logout">New? sign up</a></li>
                 </ul>
             </div>
         </div>

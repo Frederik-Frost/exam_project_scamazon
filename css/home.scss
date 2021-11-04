@@ -1,0 +1,30 @@
+@use 'variables';
+#home {
+    display: grid;
+    grid-template-columns: 100fr 300fr;
+    width: 100%;
+    height: auto;
+
+    & > section {
+        padding: 1rem;
+        min-height: calc(100vh - #{variables.$navHeight});
+        background: rgba(0, 0, 0, 0.1);
+    }
+    & > main {
+        padding: 1rem;
+        min-height: calc(100vh - #{variables.$navHeight});
+        /* background: rgba(0, 0, 0, 0.5); */
+    }
+
+    & >div.item {
+        border-top: 3px solid rgba(0, 0, 0, 0.5);
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 100fr 400fr;
+        padding-top: 1rem;
+        
+        img {
+            width: 15rem;
+        }
+    }
+}
