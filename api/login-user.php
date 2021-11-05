@@ -21,6 +21,7 @@ try{
     $q->execute();
     $row = $q->fetch();
     if(!$row){_res(400, ['info' => 'Could not find user', 'error' =>__LINE__]);}
+    if($row['verified'] == 0 ){_res(400, ['info' => 'Account is not yet verified', 'error' =>__LINE__]);}
     else {
         $passwordVerification = password_verify($_POST['password'], $row['password']);
         if(!$passwordVerification){

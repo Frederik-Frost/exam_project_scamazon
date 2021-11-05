@@ -16,9 +16,6 @@ function _res( $status=200, $message=[] ){
   exit();
 }
 
-
-
-
 // ##############################
 
 function _api_db(){

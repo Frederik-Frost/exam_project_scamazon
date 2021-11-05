@@ -13,7 +13,7 @@
     --amazon-blue: #232f3e;
 }
 
-.text-small {
+.textSmall {
     font-weight: normal;
     font-size: .7rem;
 }
@@ -118,7 +118,7 @@ input {
 #itemsPage{
     margin-top: 6rem;
 }
-div#main-container {
+div#mainContainer {
     display: grid;
     grid-template-columns: 100fr 300fr;
     width: 100%;
@@ -126,19 +126,19 @@ div#main-container {
     margin-top: 6rem;
 }
 
-div#main-container>section {
+div#mainContainer>section {
     padding: 1rem;
     min-height: calc(100vh - var(--navHeight));
     background: rgba(0, 0, 0, 0.1);
 }
 
-div#main-container>main {
+div#mainContainer>main {
     padding: 1rem;
     min-height: calc(100vh - var(--navHeight));
     /* background: rgba(0, 0, 0, 0.5); */
 }
 
-div#main-container>main>div.item {
+div#mainContainer>main>div.item {
     border-top: 3px solid rgba(0, 0, 0, 0.5);
     display: grid;
     gap: 1rem;
@@ -146,7 +146,7 @@ div#main-container>main>div.item {
     padding-top: 1rem;
 }
 
-div#main-container>main>div.item img {
+div#mainContainer>main>div.item img {
     width: 15rem;
 }
 

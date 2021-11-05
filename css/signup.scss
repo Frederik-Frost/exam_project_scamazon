@@ -1,6 +1,6 @@
 @use 'variables';
 
-#loginPage, #resetPasswordPage {
+#signupPage {
     display: flex;
     justify-content: center;
     margin-top: 12rem;
@@ -14,9 +14,7 @@
         text-align: center;
         color: variables.$amazon-color;
     }
-  
-    form{
-        position: relative;
+    #signupForm{
         color: variables.$amazon-color;
         border-radius: 4px;
         box-shadow: 2px 2px 10px 2px #00000040;
@@ -37,9 +35,21 @@
             
         }
         
+        button{
+            height: 2.5rem;
+            margin: .4rem 0;
+            padding: .2rem;
+            background: variables.$amazon-color;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 2px 2px 6px 0px #00000040;
+            font-size: 1rem;
+            color: white;
+        }
 
         span{
             text-align: center;
+            color: #000;
         }
         span.errorMsg{
             font-size: .7rem;
@@ -48,28 +58,11 @@
         }
         a {
             text-decoration: none;
-            color: variables.$amazon-color;
-        }
-
-
-        .alternateActions{
-            display: flex;
-            flex-direction: column;
-            span:not(a){
-                color: #00000052;
-            }
+            color: variables.$amazon-color;;
         }
     }
-    .forgot-password{
-        // left: 50%;
-        // transform: translateX(-50%);
-        // position: absolute;
-        // bottom: .2rem;
-        span{
-            color: variables.$amazon-color;
-        }
-    }
-    .hidden{
+    .succesMessage{
         display: none;
     }
+
 }

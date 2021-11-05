@@ -10,7 +10,7 @@ $text = [
         'dk' => 'Log ind'
     ],
     '3' => [
-        'en' => '<span class="text-small">Returns</span> <br> &amp; orders',
+        'en' => '<span class="textSmall">Returns</span> <br> &amp; orders',
         'dk' => 'Retur &amp; ordrer'
     ],
     '4' => [

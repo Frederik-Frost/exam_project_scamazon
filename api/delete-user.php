@@ -7,7 +7,7 @@ try{
     $query = $db->prepare('DELETE FROM users WHERE id = :id');
     $query->bindValue(':id', $id);
     $query->execute();
-    $response = 'Deleted '.$query->rowCount().' user with id: '.$id;
+    $response = ['info' => 'Deleted '.$query->rowCount().' user with id: '.$id];
     echo json_encode($response);
 
 }catch(PDOException $ex){

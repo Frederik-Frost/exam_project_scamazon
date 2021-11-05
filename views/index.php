@@ -9,7 +9,7 @@
     require_once(__DIR__.'/../components/nav.php');
 ?>  
       <!-- start div left and right  -->
-      <div id="home" class="main-container">
+      <div id="home" class="mainContainer">
         <section>
             left panel
 

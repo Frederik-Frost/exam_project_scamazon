@@ -23,7 +23,7 @@
         </div>
       </div>
         <div class="dropdown sign-in">
-                <p class="greeting text-small"> <?= $text['12'][$lang], $user_name?></p>
+                <p class="greeting textSmall"> <?= $text['12'][$lang], $user_name?></p>
                <span> 
                     <?= (isset($user_name) ? $text['11'][$lang] : $text['2'][$lang]) ?>
                </span>
