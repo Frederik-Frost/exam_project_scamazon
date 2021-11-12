@@ -277,6 +277,18 @@
   width: 15rem;
 }
 
+#notFound main {
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#notFound h1 {
+  font-size: 4rem;
+  color: #febd69;
+}
+
 * {
   padding: 0;
   margin: 0;

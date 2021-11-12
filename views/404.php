@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    404.....
-</body>
-</html>
+<?php 
+    $_title = 'Not found';
+    require_once(__DIR__.'/../components/header.php');
+?>
+<div id="notFound">
+    <?php 
+           require_once(__DIR__.'/../components/nav.php');   
+    ?>
+    <main>
+        <h1>4<i class="far fa-sad-tear"></i>4</h1>
+        <h2>Page not found</h2>
+    </main>
+</div>
+<?php 
+    require_once(__DIR__.'/../components/footer.php');
+?>

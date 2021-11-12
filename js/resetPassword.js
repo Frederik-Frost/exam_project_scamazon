@@ -3,14 +3,12 @@ function all(query){return document.querySelectorAll(query)}
 
 window.addEventListener('DOMContentLoaded', () => {
     const params = Object.fromEntries(urlSearchParams.entries());
-    console.log(params.key)
     one("#hiddenKeyInput").value = params.key
 })
 
 async function newPassword(event){
     let form = event.target.form;
     if(one("#passwordInput").value != one("#repeatPasswordInput").value){
-        console.log("WROOOONG")
     } else{
         let conn = await fetch('new-password', {
             'method': 'POST',

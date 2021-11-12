@@ -10,6 +10,7 @@ if( !isset($_POST['repeatPassword']) ){_res('400', ['info' => 'New password requ
 if( strlen($_POST['repeatPassword']) < _PASSWORD_MIN_LEN ){_res('400', ['info' => 'New password must be at least '. _PASSWORD_MIN_LEN .' characters']);}
 if( strlen($_POST['repeatPassword']) > _PASSWORD_MAX_LEN ){_res('400', ['info' => 'New password can be no more than '. _PASSWORD_MAX_LEN .' characters']);}
 
+if($_POST['repeatPassword'] != $_POST['password']){_res('400', ['info' => 'Repeat password does not match password']);}
 //To do: Verify the key (must be 32 characters)
 if(!isset($_POST['key'])){_res('400', ['info' => 'No key']);}
 if(strlen($_POST['key']) != 32){_res('400', ['info' => 'Not a valid key']);}

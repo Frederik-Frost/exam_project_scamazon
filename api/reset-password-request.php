@@ -6,8 +6,6 @@ $db = _api_db();
 if( !isset($_POST['email']) ){_res('400',  "Email is required");}
 if( !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL ) ){_res('400',["info" => "Email is invalid"]);}
 
-
-
 try{
     $query = $db->prepare('SELECT * FROM users WHERE email = :email');
     $query->bindValue(":email", $_POST['email']);

@@ -46,11 +46,8 @@ async function onResetPassword(event){
 
 }
 
-
-
 function toggleReset(){
-    console.log("object")
-    document.querySelectorAll("form").forEach(e => {
+        document.querySelectorAll("form").forEach(e => {
         e.classList.toggle("hidden")
     })
 }
