@@ -4,6 +4,8 @@ function _all(q,from=document){return from.querySelectorAll(q)}
 
 // ##############################
 function validate(callback){
+  console.log("validation")
+  event.preventDefault();
     const form = event.target
     const validate_error = "rgba(240, 130, 240, 0.2)"
     _all("[data-validate]",form).forEach(function(element){ 

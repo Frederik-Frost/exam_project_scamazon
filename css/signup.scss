@@ -3,7 +3,7 @@
 #signupPage {
     display: flex;
     justify-content: center;
-    margin-top: 12rem;
+    // margin-top: 12rem;
 
     label{
         padding-left: .2rem;
@@ -15,6 +15,7 @@
         color: variables.$amazon-color;
     }
     #signupForm{
+        margin-top: 10rem;
         color: variables.$amazon-color;
         border-radius: 4px;
         box-shadow: 2px 2px 10px 2px #00000040;

@@ -10,6 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if(params.requestNewReset){
         toggleReset();
     }
+    if(params.loginNeeded){
+        one(".infoTxt").innerText = 'Please login before you can manage products';
+        one(".infoTxt").classList.add('textDanger')
+    }
 })
 
 
@@ -24,7 +28,7 @@ async function login(event){
     })
     let res = await conn.json()
     if(conn.ok){
-        location.href = "/"
+        location.href = params.loginNeeded ? params.loginNeeded : "/" 
     } else{
         document.querySelector(".errorMsg").innerText = res.info;
     }

@@ -3,7 +3,7 @@
 #loginPage, #resetPasswordPage {
     display: flex;
     justify-content: center;
-    margin-top: 12rem;
+    // margin-top: 12rem;
 
     label{
         padding-left: .2rem;
@@ -16,6 +16,7 @@
     }
   
     form{
+        margin-top: 12rem;
         position: relative;
         color: variables.$amazon-color;
         border-radius: 4px;

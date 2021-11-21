@@ -1,11 +1,16 @@
 @use 'variables';
-#main-nav {
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+#mainNav {
     /* height: 5rem; */
     height: 3.5rem;
     width: 100%;
     color: white;
     background-color: variables.$amazon-dark-blue;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     display: grid;
@@ -17,7 +22,7 @@
     font-size: 14px;
     font-weight: bold;
 
-    > div {
+    > div, > a{
         padding: 6px;
 
         &:hover {
@@ -35,16 +40,23 @@
         text-decoration: none;
         color: #fff;
     }
-    span{color: #fff;}
+    span{
+        color: #fff;
+    }
+
+    .productManagement{
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
-.sub-nav {
+.subNav {
     height: 2.5rem;
     width: 100%;
     color: white;
     /* background-color: rgb(51, 51, 51); */
     background-color: variables.$amazon-blue;
-    position: fixed;
+    // position: fixed;
     /* top: 5rem; */
     top: 3.5rem;
     left: 0;
@@ -53,7 +65,7 @@
     align-items: center;
     padding: 0 1rem;
     font-size: .8rem;
-    z-index: -1;
+    // z-index: -1;
 
     >div {
         margin-right: 1rem;
@@ -67,7 +79,7 @@
     font-weight: bold;
 }
 
-.burger-menu {
+.burgerMenu {
     height: 1rem;
     width: 1rem;
     position: relative;
@@ -85,7 +97,7 @@
 }
 
 
-.current-lang img{
+.currentLang img{
     width: 24px;
 }
 
@@ -94,7 +106,7 @@
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdownContent {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -111,26 +123,26 @@
     }
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdownContent {
     display: flex;
     flex-direction: column;
 }
 
-.dropdown-content.dropdown-signup {
+.dropdownContent.dropdownSignup {
     width: max-content;
 }
 
-.dropdown-content.dropdown-signup ul {
+.dropdownContent.dropdownSignup ul {
     display: flex;
     flex-direction: column;
 }
 
-.dropdown-content.dropdown-signup ul li {
+.dropdownContent.dropdownSignup ul li {
     border-bottom: 1px solid #000;
     padding: 6px 8px; 
 }
 
-.dropdown-content.dropdown-signup a {
+.dropdownContent.dropdownSignup a {
     text-decoration: none;
     padding: 1rem 0;
     color: #000;

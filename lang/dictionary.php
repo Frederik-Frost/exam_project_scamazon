@@ -3,50 +3,50 @@
 $text = [
     '1' => [
         'en' => 'Deliver to Denmark',
-        'dk' => 'Levering til Danmark'
+        'da' => 'Levering til Danmark'
     ],
     '2' => [
         'en' => 'Sign in',
-        'dk' => 'Log ind'
+        'da' => 'Log ind'
     ],
     '3' => [
-        'en' => '<span class="textSmall">Returns</span> <br> &amp; orders',
-        'dk' => 'Retur &amp; ordrer'
+        'en' => '<span class="textSmall">Manage</span> <br> products',
+        'da' => 'Administrer produkter'
     ],
     '4' => [
         'en' => 'Cart',
-        'dk' => 'Kurv'
+        'da' => 'Kurv'
     ],
     '5' => [
         'en' => 'All',
-        'dk' => 'Alle'
+        'da' => 'Alle'
     ],
     '6' => [
         'en' => 'Todays deals',
-        'dk' => 'Dagens tilbud'
+        'da' => 'Dagens tilbud'
     ],
     '7' => [
         'en' => 'Customer service',
-        'dk' => 'Kundeservice'
+        'da' => 'Kundeservice'
     ],
     '8' => [
         'en' => 'Gift cards',
-        'dk' => 'Gavekort'
+        'da' => 'Gavekort'
     ],
     '9' => [
         'en' => 'Registry',
-        'dk' => 'Ønskeliste'
+        'da' => 'Ønskeliste'
     ],
     '10' => [
         'en' => 'Sell',
-        'dk' => 'Sælg'
+        'da' => 'Sælg'
     ],
     '11' => [
         'en' => 'Account',
-        'dk' => 'Konto'
+        'da' => 'Konto'
     ],
     '12' => [
         'en' => 'Hello, ',
-        'dk' => 'Hej, '
+        'da' => 'Hej, '
     ]
 ];

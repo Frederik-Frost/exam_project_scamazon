@@ -8,7 +8,7 @@
         echo "mmm..... suspicious (key is not 32 chars)";
         exit();
     }
-    echo $_GET['key'];
+    // echo $_GET['key'];
 
     $_title = 'Reset passsword';
     require_once(__DIR__.'/../components/header.php');

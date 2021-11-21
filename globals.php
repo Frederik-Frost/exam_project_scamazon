@@ -6,6 +6,7 @@ define('_NAME_MIN_LEN', 2);
 define('_NAME_MAX_LEN', 30);
 define('_PRODUCT_MIN_LEN', 2);
 define('_PRODUCT_MAX_LEN', 20);
+define('_DESCRIPTION_MAX_LEN', 255);
 
 // ##############################
 

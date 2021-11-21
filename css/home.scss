@@ -1,15 +1,28 @@
 @use 'variables';
 #home {
     display: grid;
-    grid-template-columns: 100fr 300fr;
+    // grid-template-columns: 100fr 300fr;
     width: 100%;
     height: auto;
 
-    & > section {
-        padding: 1rem;
-        min-height: calc(100vh - #{variables.$navHeight});
-        background: rgba(0, 0, 0, 0.1);
+    #heroImage{
+        text-align: center;
+        width: 100%;
+        aspect-ratio: 16/6;
+        background-color: grey;
+
+        h1{
+            margin: 2rem;
+        }
+        h2{
+            font-size: 3rem;
+        }
     }
+    // & > section {
+    //     padding: 1rem;
+    //     min-height: calc(100vh - #{variables.$navHeight});
+    //     background: rgba(0, 0, 0, 0.1);
+    // }
     & > main {
         padding: 1rem;
         min-height: calc(100vh - #{variables.$navHeight});
@@ -27,4 +40,13 @@
             width: 15rem;
         }
     }
+    
+    #products{
+        img{
+            height: 100px;
+        }
+    }
 }
+// #uploadForm{
+//     display: flex;
+// }
