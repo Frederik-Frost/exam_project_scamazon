@@ -1,5 +1,5 @@
 <?php
-    //To do: Verify the key (must be 32 characters)
+    // Verify the key (must be 32 characters)
     if(!isset($_GET['key'])){
         echo "mmm..... suspicious (key is missing)";
         exit();
@@ -8,8 +8,6 @@
         echo "mmm..... suspicious (key is not 32 chars)";
         exit();
     }
-    // echo $_GET['key'];
-
     $_title = 'Reset passsword';
     require_once(__DIR__.'/../components/header.php');
 
@@ -18,10 +16,12 @@
     require_once(__DIR__.'/../components/nav.php');
 ?>   
 <div id="resetPasswordPage" class="mainContainer">
-    <!-- <form onsubmit="validate(login); return false"> -->
-    <form onsubmit="return false" id="newPasswordForm"> 
+    <div class="logo"> 
+        <a href="/"><img src="/../assets/svg/scamlogo-black.svg" alt="scamazon logo"></a>
+    </div>
+    
+    <form onsubmit="validate(newPassword); return false" id="newPasswordForm">
         <h1>New password</h1>
-   
         <div class="formGroup">
             <label for="password">New password</label>
             <input 
@@ -51,7 +51,7 @@
         <input id="hiddenKeyInput" type="hidden" name="key">
 
         <span class="errorMsg"></span>
-        <button type="submit" onclick="newPassword(event)">New password</button>
+        <button type="submit" class="btn btnPrimary">New password</button>
     </form>
 </div>
 <script src="../js/validator.js"></script>

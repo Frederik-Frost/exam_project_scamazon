@@ -1,133 +1,65 @@
 #loginPage, #resetPasswordPage {
-  display: flex;
-  justify-content: center;
-}
-#loginPage label, #resetPasswordPage label {
-  padding-left: 0.2rem;
-}
-#loginPage h1, #resetPasswordPage h1 {
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #febd69;
+  background-color: #fff;
 }
 #loginPage form, #resetPasswordPage form {
-  margin-top: 12rem;
-  position: relative;
-  color: #febd69;
-  border-radius: 4px;
-  box-shadow: 2px 2px 10px 2px #00000040;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 400px;
-  padding: 4rem 3rem;
-  background: white;
-}
-#loginPage form input, #resetPasswordPage form input {
-  height: 2.5rem;
-  margin: 0.4rem 0;
-  padding: 0.2rem;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 2px 2px 6px 0px #00000040;
-}
-#loginPage form span, #resetPasswordPage form span {
-  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+  width: 350px;
 }
 #loginPage form span.errorMsg, #resetPasswordPage form span.errorMsg {
   font-size: 0.7rem;
   text-align: left;
   color: #f33a21;
 }
-#loginPage form a, #resetPasswordPage form a {
-  text-decoration: none;
-  color: #febd69;
-}
-#loginPage form .alternateActions, #resetPasswordPage form .alternateActions {
-  display: flex;
-  flex-direction: column;
-}
-#loginPage form .alternateActions span:not(a), #resetPasswordPage form .alternateActions span:not(a) {
-  color: #00000052;
-}
-#loginPage .forgot-password span, #resetPasswordPage .forgot-password span {
-  color: #febd69;
-}
 #loginPage .hidden, #resetPasswordPage .hidden {
   display: none;
 }
+#loginPage .logo, #resetPasswordPage .logo {
+  position: absolute;
+  left: 50%;
+  top: 140px;
+  transform: translateX(-50%);
+}
+#loginPage .logo img, #resetPasswordPage .logo img {
+  height: 40px;
+}
 
 #signupPage {
-  display: flex;
-  justify-content: center;
-}
-#signupPage label {
-  padding-left: 0.2rem;
-}
-#signupPage h1 {
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #febd69;
+  margin-top: 7rem;
 }
 #signupPage #signupForm {
-  margin-top: 10rem;
-  color: #febd69;
-  border-radius: 4px;
-  box-shadow: 2px 2px 10px 2px #00000040;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 400px;
-  padding: 4rem 3rem;
-  background: white;
-}
-#signupPage #signupForm input {
-  height: 2.5rem;
-  margin: 0.4rem 0;
-  padding: 0.2rem;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 2px 2px 6px 0px #00000040;
-}
-#signupPage #signupForm button {
-  height: 2.5rem;
-  margin: 0.4rem 0;
-  padding: 0.2rem;
-  background: #febd69;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 2px 2px 6px 0px #00000040;
-  font-size: 1rem;
-  color: white;
-}
-#signupPage #signupForm span {
-  text-align: center;
-  color: #000;
-}
-#signupPage #signupForm span.errorMsg {
-  font-size: 0.7rem;
-  text-align: left;
-  color: #f33a21;
-}
-#signupPage #signupForm a {
-  text-decoration: none;
-  color: #febd69;
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+  width: 350px;
 }
 #signupPage .succesMessage {
   display: none;
+}
+#signupPage .logo {
+  position: absolute;
+  left: 50%;
+  top: 140px;
+  transform: translateX(-50%);
+}
+#signupPage .logo img {
+  height: 40px;
 }
 
 nav {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 99;
 }
 
 #mainNav {
   /* height: 5rem; */
-  height: 3.5rem;
   width: 100%;
-  color: white;
+  color: #fff;
   background-color: #131921;
   top: 0;
   left: 0;
@@ -141,12 +73,14 @@ nav {
   font-weight: bold;
 }
 #mainNav > div, #mainNav > a {
+  margin: 2px;
   padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 2px;
 }
 #mainNav > div:hover, #mainNav > a:hover {
   cursor: pointer;
   border: 1px solid #fff;
-  border-radius: 2px;
 }
 #mainNav input {
   width: 30rem;
@@ -155,6 +89,10 @@ nav {
 #mainNav .logo a {
   text-decoration: none;
   color: #fff;
+}
+#mainNav .logo a img {
+  height: 40px;
+  padding: 0px;
 }
 #mainNav span {
   color: #fff;
@@ -167,7 +105,7 @@ nav {
 .subNav {
   height: 2.5rem;
   width: 100%;
-  color: white;
+  color: #fff;
   /* background-color: rgb(51, 51, 51); */
   background-color: #232f3e;
   /* top: 5rem; */
@@ -202,7 +140,7 @@ nav {
 }
 
 .bar {
-  background: white;
+  background: #fff;
   width: 1rem;
   height: 2px;
 }
@@ -258,26 +196,20 @@ nav {
 }
 
 #home {
-  display: grid;
+  margin: 0 auto;
   width: 100%;
+  max-width: 1500px;
   height: auto;
 }
-#home #heroImage {
-  text-align: center;
+#home #heroImage img {
+  margin-top: 0rem;
   width: 100%;
-  aspect-ratio: 16/6;
-  background-color: grey;
-}
-#home #heroImage h1 {
-  margin: 2rem;
-}
-#home #heroImage h2 {
-  font-size: 3rem;
 }
 #home > main {
   padding: 1rem;
   min-height: calc(100vh - 7rem);
   /* background: rgba(0, 0, 0, 0.5); */
+  margin-top: -24rem;
 }
 #home > div.item {
   border-top: 3px solid rgba(0, 0, 0, 0.5);
@@ -289,8 +221,44 @@ nav {
 #home > div.item img {
   width: 15rem;
 }
-#home #products img {
-  height: 100px;
+#home .item {
+  padding: 1rem;
+  background: #fff;
+}
+#home #products, #home #affiliateProducts {
+  color: #0F1111;
+}
+#home #products h2, #home #affiliateProducts h2 {
+  margin-bottom: 1rem;
+}
+#home #products .items, #home #affiliateProducts .items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+#home #products .items .item, #home #affiliateProducts .items .item {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(250px, auto) auto auto auto;
+  position: relative;
+  gap: 1rem;
+}
+#home #products .items .item img, #home #affiliateProducts .items .item img {
+  align-self: center;
+  justify-self: center;
+  object-fit: cover;
+  max-width: 80%;
+  max-height: 250px;
+}
+#home #products .items .item .price, #home #affiliateProducts .items .item .price {
+  font-weight: bold;
+}
+#home #products .items .item button, #home #affiliateProducts .items .item button {
+  width: 140px;
 }
 
 #notFound main {
@@ -305,39 +273,79 @@ nav {
   color: #febd69;
 }
 
-#uploadForm {
+#itemsPage .top {
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  color: #febd69;
-  border-radius: 4px;
-  box-shadow: 2px 2px 10px 2px #00000040;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+  padding: 1rem 1rem 0;
+}
+#itemsPage .top .btn {
+  margin: 0;
+  padding: 0 1rem;
+}
+#uploadForm {
+  margin: 0 auto;
+}
+
+#items {
+  color: #0F1111;
+  margin: 0 auto;
+  width: 90%;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 400px;
-  padding: 4rem 3rem;
-  background: white;
-  gap: 0.4rem;
+  gap: 1rem;
 }
-#uploadForm input {
-  height: 2.5rem;
-  padding: 0.2rem;
-  border: none;
-  border-radius: 2px;
+#items .item, #items .itemHeaders {
+  display: grid;
+  grid-template-columns: 100fr 100fr 100fr 45fr 25fr 25fr 30fr;
+  align-items: center;
+  padding: 1rem;
+  gap: 20px;
+}
+#items .item .updateItem, #items .item .deleteItem, #items .item .bulkAction, #items .itemHeaders .updateItem, #items .itemHeaders .deleteItem, #items .itemHeaders .bulkAction {
+  justify-self: center;
+}
+#items .item h4:first-of-type, #items .itemHeaders h4:first-of-type {
+  text-align: center;
+}
+#items .item .btn, #items .itemHeaders .btn {
+  height: auto;
+  margin: 0;
+}
+#items .item {
+  background-color: #fff;
+  border-radius: 4px;
   box-shadow: 2px 2px 6px 0px #00000040;
+  position: relative;
+  min-height: 160px;
 }
-
-.fa-trash-alt {
+#items .item .descriptions, #items .item .titles, #items .item .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 12px;
+}
+#items .item .descriptions span, #items .item .titles span, #items .item .price span {
+  font-weight: bold;
+}
+#items .item .productImg {
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+#items .item .productImg img {
+  height: 100px;
   pointer-events: none;
 }
-
-#items .productImg {
-  max-width: 100px;
-  overflow: auto;
+#items .fa-trash-alt, #items .fa-pen {
+  pointer-events: none;
 }
-#items .productImg img {
-  height: 50px;
+#items input[type=checkbox] {
+  margin: 0;
 }
 
 * {
@@ -361,18 +369,72 @@ nav {
 }
 
 span {
-  color: #000;
+  color: #111111;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  margin: 0.5rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  padding: 20px 26px;
+  background: white;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  color: #111111;
+}
+form h1, form h2 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+form p {
+  padding: 0;
+  margin: 0 0 14px 0;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+label {
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #111111;
+}
+
+input {
+  height: 31px;
+  padding: 3px 7px;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(0, 0, 0, 0.07) inset;
+  outline: 0;
+  line-height: 19px;
+  margin-bottom: 14px;
+}
+input:focus {
+  border-color: #e77600;
+  box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: -internal-light-dark(#e8f0fe, rgba(70, 90, 126, 0.4)) !important;
+  color: -internal-light-dark(black, white) !important;
 }
 
 body {
-  background: white;
-  width: 100%;
+  background: #EAEDED;
   height: calc(100vh - 7rem);
   overflow: hidden;
   overflow-y: scroll;
@@ -383,19 +445,25 @@ main {
 }
 
 .mainContainer {
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
-button {
-  height: 2.5rem;
-  margin: 0.4rem 0;
-  padding: 0.2rem;
-  background: #febd69;
-  border: none;
+.btn {
+  font-size: 13px;
+  line-height: 19px;
+  cursor: pointer;
   border-radius: 2px;
-  box-shadow: 2px 2px 6px 0px #00000040;
-  font-size: 1rem;
-  color: white;
+  height: 29px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  color: #111111;
+  border: 1px solid;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  margin-bottom: 18px;
+}
+
+.btnPrimary {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border-color: #a88734 #9c7e31 #846a29;
 }
 
 .btnSmall {
@@ -406,6 +474,22 @@ button {
 
 .actions {
   display: flex;
+}
+
+.alternateActions {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #111111;
+}
+.alternateActions a {
+  text-decoration: none;
+  color: #0066c0;
+}
+
+.link {
+  text-decoration: none;
+  color: #0066c0;
+  cursor: pointer;
 }
 
 .modal {
@@ -421,12 +505,10 @@ button {
 }
 
 .modalContent {
-  background-color: #fefefe;
+  background-color: #fff;
   margin: 20% auto;
-  padding: 20px;
   border-radius: 4px;
   width: 400px;
-  text-align: center;
 }
 
 .modalContent input {

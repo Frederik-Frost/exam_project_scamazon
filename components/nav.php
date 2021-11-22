@@ -8,7 +8,7 @@
 ?>
 <nav>
     <div id="mainNav">
-      <div class="logo"> <a href="/">Amaztolen</a></div>
+      <div class="logo"> <a href="/"><img src="/../assets/svg/scamlogo.svg" alt="scamazon logo"></a></div>
       <div class="delivery" >📍<?= $text['1'][$lang] ?> </div>
       <div class="searchBar">
         <input type="text">
@@ -31,7 +31,7 @@
                </span>
             <div class="dropdownContent dropdownSignup">
                 <ul>
-                  <?= isset($user_name) ? "<li><a href='manage-account'>Account</a></li>" : "<li><a href='login'>Sign in</a></li>" ; ?>
+                  <?= isset($user_name) ? "<li><a href='account'>Account</a></li>" : "<li><a href='login'>Sign in</a></li>" ; ?>
                   <?= isset($user_name) ? "<li><a href='logout'>Logout</a></li>" : "<li><a href='signup'>New? sign up</a></li>" ; ?>
                 </ul>
             </div>

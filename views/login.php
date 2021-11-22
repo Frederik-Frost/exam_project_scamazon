@@ -1,24 +1,25 @@
 <?php
     $_title = 'Login';
-    require_once(__DIR__.'/../components/header.php'); // This doesnt read variables??
-    // require_once('components/header.php'); // this does
-
+    require_once(__DIR__.'/../components/header.php');
     $lang = $_GET['lang'] ?? 'en';
     require_once(__DIR__.'/../lang/dictionary.php');
     require_once(__DIR__.'/../components/nav.php');
 ?>   
 <div id="loginPage" class="mainContainer">
-    <!-- <form onsubmit="validate(login); return false"> -->
-    <form onsubmit="return false" id="loginForm">
-    <span class="infoTxt"></span>
-        <h1>Login</h1>
+    <div class="logo"> 
+        <a href="/"><img src="/../assets/svg/scamlogo-black.svg" alt="scamazon logo"></a>
+    </div>
+    <form onsubmit="validate(login); return false" id="loginForm">
+        <span class="infoTxt"></span>
+        <h1>Sign in</h1>
         <div class="formGroup">
             <label for="email">Email</label>
             <input
-            id="emailInput" 
-            type="text" 
-            name="email" 
-            placeholder="Enter email"
+                id="emailInput" 
+                type="text" 
+                name="email" 
+                placeholder="Enter email"
+                data-validate="email"
             >
         </div>
         <div class="formGroup">
@@ -35,28 +36,31 @@
             >
         </div>
         <span class="errorMsg"></span>
-        <button type="submit" onclick="login(event)">Login</button>
+        <button type="submit" class="btn btnPrimary">Sign in</button>
        <div class="alternateActions">
-           <span class="txtSmall">No account? <a href="signup">Sign up</a> </span> 
-           
-           <span class="forgot-password">Forgot you password? <button onclick="toggleReset()" class="btn btnSmall">Reset</button> </span>
+           <span>No account? <a href="signup">Sign up</a> </span> 
+           <br>
+           <span>Forgot you password? <span onclick="toggleReset()" class="link"> Reset</span> </span>
        </div>
     </form>
-    <form onsubmit="return false" id="forgotPasswordForm" class="hidden">
-        <h1>Forgot password</h1>
-        <span>Enter your email address and we will sent you a link to reset your password</span>
+    <form onsubmit="validate(onResetPassword); return false" id="forgotPasswordForm" class="hidden">
+        <h1>Password assistance</h1>
+        <p>Enter your email address and we will sent you a link to reset your password</p>
         <div class="formGroup">
             <label for="email">Email</label>
             <input
-            id="emailInputReset" 
-            type="text" 
-            name="email" 
-            placeholder="Enter email"
+                id="emailInputReset" 
+                type="text" 
+                name="email" 
+                placeholder="Enter email"
+                data-validate="email"
             >
         </div>
         <span class="feedbackMsg"></span>
-        <button type="submit" onclick="onResetPassword(event)">Send link</button>
-        <span class="forgot-password">Back to<button onclick="toggleReset()" class="btn btnSmall">Login</button> </span>
+        <button type="submit" class="btn btnPrimary" >Send link</button>
+        <div class="alternateActions">
+            <span class="forgot-password">Back to<span onclick="toggleReset()" class="link"> Login</span> </span>
+        </div>
     </form>
 </div>
 

@@ -11,12 +11,6 @@
 //ERROR FIRST'
 require_once(__DIR__.'/../globals.php');
 $db = _api_db();
-// try{
-//     $db = _api_db();
-// } catch(Exception $ex){
-//     http_response_code(500);
-//     echo json_encode(['info' => 'System under maintainance', 'error' => __LINE__]);
-// }
 
 //Validate firstName
 if( !isset($_POST['name']) ){_res('400',['info' => "Name is required"]);}

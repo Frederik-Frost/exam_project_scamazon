@@ -31,6 +31,9 @@ try{
             session_start();
             $_SESSION['user_name'] = $row['name'];
             $_SESSION['user_last_name'] = $row['last_name'];
+            $_SESSION['user_email'] = $row['email'];
+            $_SESSION['user_phone'] = $row['phone'];
+            $_SESSION['user_id'] = $row['id'];
             _res('200', ['info' => 'Successfully logged in']);
         }
     }

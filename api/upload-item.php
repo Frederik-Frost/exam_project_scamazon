@@ -4,15 +4,14 @@ $db = _api_db();
 //Validate
 $target_dir = __DIR__."/../assets/product-images/";
 $target_file = $target_dir.basename($_FILES["image"]["name"]);
-$uploadOk = true;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$image_file_type = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Checking if there is a file uploaded in the form
 if(!isset($_FILES['image']) || strlen($_FILES['image']['name']) <= 0){_res('400',[ "info" => "No image uploaded"]);}
 //Checking if the file uploaded is actually an image by trying to get the size. 
-$checkImage = getimagesize($_FILES['image']['tmp_name']);
-if($checkImage == false){_res('400',[ "info" => "File is not an image"]);}
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"){_res('400',[ "info" => "Image must be of type jpg, png, jpeg"]);}
+$check_image = getimagesize($_FILES['image']['tmp_name']);
+if($check_image == false){_res('400',[ "info" => "File is not an image"]);}
+if($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg"){_res('400',[ "info" => "Image must be of type jpg, png, jpeg"]);}
 // Check if file already exists
 if(file_exists($target_file)){_res('400',[ "info" => "This file already exists"]);}
 //Check if filesize is too large
@@ -43,8 +42,7 @@ try{
     $q->execute();
 
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-    _res('200', ["info" => "Successfully uploaded a product", "data" => $_POST, "file" => $_FILES]);
+    _res('200', ["info" => "Successfully uploaded a product", "data" => $_POST, "file" => $_FILES, "id" => $item_id]);
 }catch(Exception $ex){
-    http_response_code(500);
-    echo "System under maintainance ".__LINE__;
+    _res('500', ["info" => "System under maintainance".__LINE__]);
 }

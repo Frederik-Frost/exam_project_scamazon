@@ -11,6 +11,5 @@ try{
     echo json_encode($response);
 
 }catch(PDOException $ex){
-    echo 'System under maintainance';
-    exit();
+    _res('500', ["info" => "System under maintainance".__LINE__]);
 }

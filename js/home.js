@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 async function getProduct(){
-    let response = await fetch('getproducts', {
+    let response = await fetch('get-products', {
             'method': 'POST',
             'Content-Type': 'application/json'
         })
@@ -25,12 +25,13 @@ async function getProduct(){
 function addToList(data){
     const languageData = findLanguageData(data)
     const itemElement = `<div class="item product">
-                            <div>${languageData.title}</div>
-                            <div>${languageData.description}</div>
-                            <div>${data.price}</div>
+                            <h3>${languageData.title}</h3>
                             <img src="../assets/product-images/${data.image_path}" alt="img">
+                            <div>${languageData.description}</div>
+                            <div class="price">DKK ${data.price}</div>
+                            <button onclick="addToBasket(); return false" class="btn btnPrimary">Add to basket</button>
                         </div>`
-    one("#products").insertAdjacentHTML("beforeend", itemElement)
+    one("#products .items").insertAdjacentHTML("beforeend", itemElement)
 } 
 
 async function getAffiliateProduct(){
@@ -49,12 +50,13 @@ async function getAffiliateProduct(){
 function addToAffiliateList(data){   
     const languageData = findLanguageData(data)
     const itemElement = `<div class="item affiliateProduct">
-                            <div>${languageData.title}</div>
+                            <h3>${languageData.title}</h3>
+                            <img src='https://coderspage.com/2021-F-Web-Dev-Images/${data.image}'>
                             <div>${languageData.description}</div>
-                            <div>${data.price}</div>
-                            <img style='height:100px;' src='https://coderspage.com/2021-F-Web-Dev-Images/${data.image}'>
+                            <div class="price">DKK ${data.price}</div>
+                            <button onclick="addToBasket(); return false" class="btn btnPrimary">Add to basket</button>
                         </div>`
-    one("#affiliateProducts").insertAdjacentHTML("beforeend", itemElement)
+    one("#affiliateProducts .items").insertAdjacentHTML("beforeend", itemElement)
 } 
 
 function findLanguageData(data) {

@@ -8,6 +8,11 @@
     require_once(__DIR__.'/../components/nav.php');
 ?>   
 <div id="signupPage">
+    
+    <div class="logo"> 
+        <a href="/"><img src="/../assets/svg/scamlogo-black.svg" alt="scamazon logo"></a>
+    </div>
+
     <form id="signupForm" onsubmit="return false">
         <h1>Sign up</h1>
         <div class="formGroup">
@@ -28,10 +33,12 @@
         </div>
         <div class="formGroup">
             <label for="password">Password</label>
-            <input name="password" type="password" placeholder="Enter a password"   autocomplete="on">
+            <input name="password" type="password" placeholder="Enter a password" autocomplete="on">
         </div>
-        <button onclick="signUp()">Sign up</button>
-        <span class="txtSmall">Already have an account? <a href="login">login</a> </span>
+        <button onclick="signUp()" class="btn btnPrimary">Sign up</button>
+        <div class="alternateActions">
+            <span class="txtSmall">Already have an account? <a href="login">login</a> </span>
+        </div>
     </form>
     <div class="succesMessage">
         <p>Thank you for signing up! Check your email and verify your account!</p>

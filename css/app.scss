@@ -21,16 +21,68 @@
 }
 .textDanger{color: variables.$danger;}
 .textSuccess{color: variables.$success;}
-span{color: #000;}
+span{color: variables.$form-txt-color;}
 
 .formGroup{
     display: flex;
     flex-direction: column;
-    margin: .5rem 0;
+    // margin: .5rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    padding: 20px 26px;
+    background: white;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    color: variables.$form-txt-color;
+    h1, h2{
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 1.2;
+        padding-bottom: 4px;
+        margin-bottom: 10px;
+    }
+    p{
+        padding: 0;
+        margin: 0 0 14px 0;
+        font-size: 13px;
+        line-height: 19px;
+    }
+}
+label{
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-weight: 700;
+    font-size: 13px;
+    color: variables.$form-txt-color;
+}
+input{
+    height: 31px;
+    padding: 3px 7px;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
+    outline: 0;
+    line-height: 19px;
+    margin-bottom: 14px;
+    &:focus{
+        border-color: #e77600;
+        box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+    }
+}
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+    color: -internal-light-dark(black, white) !important;
 }
 body {
-    background: white;
-    width: 100%;
+    background: #EAEDED;
     height: calc(100vh - 7rem);
     overflow: hidden;
     overflow-y: scroll;
@@ -39,19 +91,24 @@ main{
     margin-top: 6rem;
 }
 .mainContainer{
-    margin-top: 6rem;
+    margin-top: 7rem;
 }
 
-button{
-    height: 2.5rem;
-    margin: .4rem 0;
-    padding: .2rem;
-    background: variables.$amazon-color;
-    border: none;
+.btn{
+    font-size: 13px;
+    line-height: 19px;
+    cursor: pointer;
     border-radius: 2px;
-    box-shadow: 2px 2px 6px 0px #00000040;
-    font-size: 1rem;
-    color: white;
+    height: 29px;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset;
+    color:  variables.$form-txt-color;
+    border: 1px solid;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    margin-bottom: 18px;
+}
+.btnPrimary{
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border-color: #a88734 #9c7e31 #846a29;
 }
 
 .btnSmall{
@@ -62,6 +119,21 @@ button{
 
 .actions{
     display: flex;
+}
+.alternateActions{
+    font-size: 12px;
+    line-height: 1.5;
+    color:  variables.$form-txt-color;
+
+    a{
+        text-decoration: none;
+        color: #0066c0;
+    }
+}
+.link{
+    text-decoration: none;
+    color: #0066c0;
+    cursor: pointer;
 }
 .modal {
     display: none;    
@@ -75,12 +147,12 @@ button{
     background-color: rgba(0,0,0,0.4); 
   }
 .modalContent {
-    background-color: #fefefe;
+    background-color: #fff;
     margin: 20% auto; 
-    padding: 20px;
+    // padding: 20px;
     border-radius: 4px;
     width: 400px;
-    text-align: center;
+    // text-align: center;
   }
 
   .modalContent input{

@@ -14,44 +14,51 @@ window.addEventListener('DOMContentLoaded', () => {
         one(".infoTxt").innerText = 'Please login before you can manage products';
         one(".infoTxt").classList.add('textDanger')
     }
+    one("body").style.background = '#fff';
 })
 
-
-async function login(event){
-    let form = event.target.form; //cant use event.target when using santiagos validator??
-    console.log("object")
-    console.log(form)
-    let conn = await fetch('userlogin', {
-        'method': 'POST',
-        'Content-Type': 'application/json',
-        'body': new FormData(form)
-    })
-    let res = await conn.json()
-    if(conn.ok){
-        location.href = params.loginNeeded ? params.loginNeeded : "/" 
-    } else{
-        document.querySelector(".errorMsg").innerText = res.info;
+async function login(){
+    try{
+        let form = event.target;
+        console.log("object")
+        console.log(form)
+        let conn = await fetch('userlogin', {
+            'method': 'POST',
+            'Content-Type': 'application/json',
+            'body': new FormData(form)
+        })
+        let res = await conn.json()
+        if(conn.ok){
+            location.href = params.loginNeeded ? params.loginNeeded : "/" 
+        } else one(".errorMsg").innerText = res.info;
+    } catch(e){
+        console.log(e)
+        one(".errorMsg").innerText = "System under maintenance - try again later";
     }
 }
 
-async function onResetPassword(event){
-    let form = event.target.form;
-    let conn = await fetch('reset-password-request', {
-        'method': 'POST',
-        'Content-Type': 'application/json',
-        'body': new FormData(form)
-    })
-    let res = await conn.json()
-    console.log(res)
-    document.querySelector(".feedbackMsg").innerText = res.info;
-    if(conn.ok){
+async function onResetPassword(){
+    try{
+        let form = event.target;
+        let conn = await fetch('reset-password-request', {
+            'method': 'POST',
+            'Content-Type': 'application/json',
+            'body': new FormData(form)
+        })
+        let res = await conn.json()
+        console.log(res)
+        one(".feedbackMsg").innerText = res.info;
+        if(res.success == true) one(".feedbackMsg").classList.add("textSuccess")
+        else one(".feedbackMsg").classList.add("textDanger")
         
+    } catch(e){
+        console.log(e)
+        one(".feedbackMsg").innerText =  "System under maintenance - try again later";
     }
-
 }
 
 function toggleReset(){
-        document.querySelectorAll("form").forEach(e => {
+        all("form").forEach(e => {
         e.classList.toggle("hidden")
     })
 }
