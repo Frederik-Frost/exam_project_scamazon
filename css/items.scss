@@ -16,12 +16,9 @@
             padding: 0 1rem;
         }
     }
-    h1{
-        // padding: 1rem;
+    .mobileOnly{
+        display: none;
     }
-}
-#uploadForm{
-    margin: 0 auto;
 }
 #items{
     color: variables.$txt-color-black;
@@ -37,6 +34,7 @@
         align-items: center;
         padding: 1rem;
         gap: 20px;
+        
         .updateItem, .deleteItem, .bulkAction{
             justify-self: center;
         }
@@ -69,12 +67,35 @@
             overflow: auto;
             display: flex;
             justify-content: center;
+            cursor: pointer;
+            position: relative;
+            &:hover{
+                opacity: .5;
+                .fa-edit{
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 30px;
+                    pointer-events: none;
+                }
+                
+            }
+            :hover{
+                opacity: .5;
+            }
             img{
                 // margin: 0 auto;
                 // width: 120px;    
                 height:100px;
                 pointer-events: none;
+                
+               
             }
+        }
+        .fa-edit{
+            display: none;
         }
     }
     .fa-trash-alt, .fa-pen{
@@ -83,5 +104,107 @@
     input[type='checkbox']{
         margin: 0;
     }
+
 }
 
+#updateModal{
+    textarea:first-of-type{
+        margin-bottom: 12px;
+    }
+}
+.deleteBtnMobile{
+    display: none;
+}
+
+@media screen and (max-width: variables.$breakpoint1) {
+    #itemsPage.mainContainer{
+        margin-top: 179px;
+    }
+    #itemsPage{
+        .itemHeaders{
+            display: none;
+        }
+        #items{
+            display: grid;
+            grid-template-columns: repeat(auto-fit , minmax(280px ,1fr));
+            .item{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                span{
+                    font-weight: 400;
+                    margin-right: 2px;
+                }
+                h4{
+                
+                    text-align: left;
+                }
+                .desktopOnly{
+                    display: none;
+                }
+                .updateItem, .deleteItem, .bulkAction{
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    margin-top: 12px;
+                    justify-content: space-between;
+                    font-size: 14px;
+                }
+                h4.mobileOnly{
+                    margin-top: 24px;
+                }
+                p.mobileOnly{
+                    font-weight: 600;
+                }
+
+                .productImg{
+                    .fa-edit{
+                        display: block;
+                        font-size: 18px;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+                
+
+            }
+        }
+        .mobileOnly{
+            display: block;
+        }
+    }
+    .deleteBtnMobile{
+        display: block;
+    }
+    .btns{
+        display: flex;
+        gap: .5rem;
+    }
+
+  
+}
+@media screen and (max-width: variables.$breakpoint2) {
+
+    #itemsPage{
+        .top{
+            display: block;
+        }
+        .mobileOnly{
+            display: block;
+        }
+    }
+
+   
+
+    .btns{
+        display: flex;
+        gap: .5rem;
+        // flex-direction: column;
+        .btn{
+            width: 140px;
+        }
+    }
+  
+}

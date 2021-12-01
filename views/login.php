@@ -1,7 +1,6 @@
 <?php
     $_title = 'Login';
     require_once(__DIR__.'/../components/header.php');
-    $lang = $_GET['lang'] ?? 'en';
     require_once(__DIR__.'/../lang/dictionary.php');
     require_once(__DIR__.'/../components/nav.php');
 ?>   
@@ -11,7 +10,7 @@
     </div>
     <form onsubmit="validate(login); return false" id="loginForm">
         <span class="infoTxt"></span>
-        <h1>Sign in</h1>
+        <h1><?= $text['2'][$lang] ?></h1>
         <div class="formGroup">
             <label for="email">Email</label>
             <input
@@ -36,9 +35,9 @@
             >
         </div>
         <span class="errorMsg"></span>
-        <button type="submit" class="btn btnPrimary">Sign in</button>
+        <button type="submit" class="btn btnPrimary"><?= $text['2'][$lang] ?></button>
        <div class="alternateActions">
-           <span>No account? <a href="signup">Sign up</a> </span> 
+           <span><?= $text['54'][$lang] ?><a href="signup"><?= $text['55'][$lang] ?></a> </span> 
            <br>
            <span>Forgot you password? <span onclick="toggleReset()" class="link"> Reset</span> </span>
        </div>

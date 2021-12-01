@@ -1,0 +1,25 @@
+@use 'variables';
+
+
+
+#account{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    gap: 20px;
+    img{
+        height: 40px;
+    }
+    #userInfoForm{
+        // position: absolute;
+        // left: 50%;
+        // top: 200px;
+        // transform: translateX(-50%);
+        // width: 350px;
+    }
+    #changePasswordBtn{
+        padding: 2px 7px;
+    }
+}

@@ -4,24 +4,29 @@ const params = Object.fromEntries(urlSearchParams.entries());
 
 // console.log(params.lang)
 // one(".current-lang").style.background = 'blue';
-
-function setCurrentFlag(lang){
-    console.log(lang)
-    switch(lang){
-        case 'da':
-            one(".current-lang img").src = "/../assets/png/denmark-flag-square-xs.png"
-            break;
-            case 'en':
-                one(".current-lang img").src = "/../assets/png/united-kingdom-flag-square-small.png"
-          break;
-        default:
-            one(".current-lang img").src =  "/../assets/png/united-kingdom-flag-square-small.png"
+function toggleNav(){
+    if(event.target.classList.contains('mobileNav') || event.target.classList.contains('fa-bars') ){
+        document.querySelector(".mobileNav").classList.toggle("menuActive")
     }
 }
 
-function changeLang(lang){
-    //Should use routing for this
-    console.log(window.location.href)    
-    console.log(lang)
+async function changeLang(){
+    let langRes = await setLang()
+    console.log(langRes)
+    localStorage.setItem('application_language', langRes);
+    window.location.reload()
 }
 
+function setLang(){
+    let lang = document.querySelector('.languageForm input[name="lang"]:checked').value
+    let data = new FormData()
+    data.append('language', lang)
+
+    return new Promise((resolve, reject) => {
+        fetch('change-language', {
+            'method': 'POST',
+            'Content-Type': 'application/json',
+            'body': data
+        }).then((response) => resolve(response.json()))
+      });
+}

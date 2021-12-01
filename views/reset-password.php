@@ -21,9 +21,9 @@
     </div>
     
     <form onsubmit="validate(newPassword); return false" id="newPasswordForm">
-        <h1>New password</h1>
+        <h1><?= $text['30'][$lang] ?></h1>
         <div class="formGroup">
-            <label for="password">New password</label>
+            <label for="password"><?= $text['30'][$lang] ?></label>
             <input 
                 id="passwordInput"
                 type="password"
@@ -36,7 +36,7 @@
             >
         </div>
         <div class="formGroup">
-            <label for="repeatPassword">Repeat password</label>
+            <label for="repeatPassword"><?= $text['31'][$lang] ?></label>
             <input 
                 id="repeatPasswordInput"
                 type="password"
@@ -51,7 +51,7 @@
         <input id="hiddenKeyInput" type="hidden" name="key">
 
         <span class="errorMsg"></span>
-        <button type="submit" class="btn btnPrimary">New password</button>
+        <button type="submit" class="btn btnPrimary"><?= $text['30'][$lang] ?></button>
     </form>
 </div>
 <script src="../js/validator.js"></script>

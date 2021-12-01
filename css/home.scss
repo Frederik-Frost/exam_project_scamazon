@@ -7,7 +7,7 @@
 
     #heroImage{
         img{
-            margin-top: 0rem;
+            margin-top: 6%;
             width: 100%;
         }
     }
@@ -16,7 +16,7 @@
         padding: 1rem;
         min-height: calc(100vh - #{variables.$navHeight});
         /* background: rgba(0, 0, 0, 0.5); */
-        margin-top: -24rem;
+        margin-top: -25%;
     }
 
     & > div.item {
@@ -49,13 +49,13 @@
             margin-bottom: 1rem;
             position: relative;
             .item{
-               
                 height: 100%;
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-rows: auto minmax(250px, auto) auto auto auto;
                 position: relative;
                 gap: 1rem;
+                align-items: end;
                 // min-height: 300px;
                 img{
                     align-self: center;
@@ -71,6 +71,35 @@
                     width: 140px;
                 }
 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variables.$breakpoint1) {
+    #home{
+        #heroImage{
+            img{
+                margin-top: 15%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variables.$breakpoint3) {
+    #home{
+        #heroImage{
+            img{
+                margin-top: 22%;
+            }
+        }
+    }
+}
+@media screen and (max-width: variables.$breakpoint2) {
+    #home{
+        #heroImage{
+            img{
+                margin-top: 28%;
             }
         }
     }

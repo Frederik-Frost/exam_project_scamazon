@@ -61,7 +61,7 @@ try{
             $query->bindValue(":password_reset_key", $password_reset_key);
             $query->execute();
         
-            $response = ["info" => "User created", "user_id" => $user_id, "created" => true];
+            $response = ["info" => "User created", "user_id" => $user_id, "user_phone" => $_POST['phone'], "user_name" => $_POST['name'], "created" => true];
             echo json_encode($response);
         
             //Send verification email to the new user

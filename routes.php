@@ -43,6 +43,9 @@ post('/upload-product', 'api/upload-item.php');
 post('/update-product', 'api/update-item.php');
 post('/update-image', 'api/update-image.php');
 post('/update-user', 'api/update-user.php');
+post('/send-sms', 'api/send-sms.php');
+post('/change-password', 'api/change-password.php');
+post('/change-language', 'api/change-language.php');
 
 //404
 any('/404','views/404.php');

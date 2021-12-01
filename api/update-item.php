@@ -5,14 +5,20 @@ require_once(__DIR__.'/../globals.php');
 $db = _api_db();
 
 // //Validate
-if(!isset($_POST['title_en']) && !isset($_POST['title_da'])){ _res('400',[ "info" => "Product needs a title in both danish and english"]);}
-if((strlen($_POST['title_en']) || strlen($_POST['title_da']) ) < _PRODUCT_MIN_LEN){ _res('400',[ "info" => "Title length must be at least "._PRODUCT_MIN_LEN." characters"]);}
-if((strlen($_POST['title_en']) || strlen($_POST['title_da']) ) > _PRODUCT_MAX_LEN){ _res('400',[ "info" => "Title length can be no longer than "._PRODUCT_MAX_LEN." characters"]);}
+if(!isset($_POST['title_en'])){ _res('400',[ "info" => "Product needs a title in both danish and english"]);}
+if(!isset($_POST['title_da'])){ _res('400',[ "info" => "Product needs a title in both danish and english"]);}
+if(strlen($_POST['title_en']) < _PRODUCT_MIN_LEN){ _res('400',[ "info" => "Title length must be at least "._PRODUCT_MIN_LEN." characters"]);}
+if(strlen($_POST['title_da']) < _PRODUCT_MIN_LEN){ _res('400',[ "info" => "Title length must be at least "._PRODUCT_MIN_LEN." characters"]);}
+if(strlen($_POST['title_en']) > _PRODUCT_MAX_LEN){ _res('400',[ "info" => "Title length can be no longer than "._PRODUCT_MAX_LEN." characters"]);}
+if(strlen($_POST['title_da']) > _PRODUCT_MAX_LEN){ _res('400',[ "info" => "Title length can be no longer than "._PRODUCT_MAX_LEN." characters"]);}
 
 if(!isset($_POST['price']) || $_POST['price'] == ''){ _res('400',[ "info" => "Product needs a price"]);}
 
-if(!isset($_POST['description_en']) && !isset($_POST['description_da'])){ _res('400',[ "info" => "Product needs a description in both danish and english"]);}
-if((strlen($_POST['description_da']) || strlen($_POST['description_da']) ) > _PRODUCT_MAX_LEN){ _res('400',[ "info" => "Title length can be no longer than "._DESCRIPTION_MAX_LEN." characters"]);}
+if(!isset($_POST['description_en']) ){ _res('400',[ "info" => "Product needs a description in both danish and english"]);}
+if(!isset($_POST['description_da']) ){ _res('400',[ "info" => "Product needs a description in both danish and english"]);}
+if(strlen($_POST['description_en']) > _DESCRIPTION_MAX_LEN){ _res('400',[ "info" => "Description length can be no longer than "._DESCRIPTION_MAX_LEN." characters"]);}
+if(strlen($_POST['description_da']) > _DESCRIPTION_MAX_LEN){ _res('400',[ "info" => "Description length can be no longer than "._DESCRIPTION_MAX_LEN." characters"]);}
+
 
 if(!isset($_POST['id'])){_res('400', ['info' => 'No id']);}
 if(strlen($_POST['id']) != 32){_res('400', ['info' => 'Not a valid id']);}

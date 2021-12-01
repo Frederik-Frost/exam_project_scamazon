@@ -8,7 +8,7 @@
     ?>
     <main>
         <h1>4<i class="far fa-sad-tear"></i>4</h1>
-        <h2>Page not found</h2>
+        <h2><?= $text['23'][$lang] ?></h2>
     </main>
 </div>
 <?php 

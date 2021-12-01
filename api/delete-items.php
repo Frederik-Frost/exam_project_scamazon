@@ -1,5 +1,6 @@
 <?php
 // DELETE MULTIPLE PRODUCTS     
+
 require_once(__DIR__.'/../globals.php');
 $db = _api_db();
 try{
@@ -20,10 +21,14 @@ try{
                 $db->rollBack();
                 _res('400', ["info" => "No item with this id"]);
                 exit();
-            } else{
+            } else{ 
+                $target_dir = __DIR__."/../assets/product-images/";
+                $image_path = $row['image_path'];
+                $target_file = $target_dir.basename($image_path);  
                 try{
                     $q = $db->prepare('DELETE FROM products WHERE id = :id');
                     $q->bindValue(':id', $itemId);
+                    unlink($target_file);
                     $q->execute();
                 } catch(Exception $ex){
                     $db->rollBack();

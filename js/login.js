@@ -20,8 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
 async function login(){
     try{
         let form = event.target;
-        console.log("object")
-        console.log(form)
         let conn = await fetch('userlogin', {
             'method': 'POST',
             'Content-Type': 'application/json',

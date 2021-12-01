@@ -11,6 +11,10 @@
     }
     .succesMessage{
         display: none;
+        position: absolute;
+        left: 50%;
+        top: 200px;
+        transform: translateX(-50%);
     }
 
     .logo{
@@ -23,4 +27,21 @@
             height: 40px;
         }
     }
+}
+
+
+@media screen and (max-width: variables.$breakpoint1) {
+    #signupPage {
+        #signupForm{
+            top: 230px;
+        }
+        .succesMessage{
+            top: 230px;
+        }
+    
+        .logo{
+            top: 170px;
+        }
+    }
+    
 }

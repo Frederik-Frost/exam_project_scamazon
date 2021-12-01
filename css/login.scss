@@ -30,3 +30,17 @@
         }
     }
 }
+
+
+@media screen and (max-width: variables.$breakpoint1) {
+    #loginPage, #resetPasswordPage {
+    
+        form{
+            top: 230px;
+        }
+        .logo{  
+            top: 170px;
+        }
+    }
+    
+}
