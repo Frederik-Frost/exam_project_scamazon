@@ -21,7 +21,11 @@ function _res( $status=200, $message=[] ){
 
 function _api_db(){
   try{
-        $database_user_name = 'root';
+        // $database_user_name = 'codeaobc_root';  // HOSTED 
+        // $database_password = 'rootpassword2021';
+        // $database_connection = 'mysql:host=localhost; dbname=codeaobc_amazonish; charset=utf8mb4';
+        
+        $database_user_name = 'root'; //LOCAL
         $database_password = 'root';
         $database_connection = 'mysql:host=localhost; dbname=amazonish; charset=utf8mb4';
       
