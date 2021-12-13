@@ -62,14 +62,16 @@ try{
             $query->execute();
         
             $response = ["info" => "User created", "user_id" => $user_id, "user_phone" => $_POST['phone'], "user_name" => $_POST['name'], "created" => true];
-            echo json_encode($response);
+            // echo json_encode($response);
         
             //Send verification email to the new user
             $_to_name = $_POST['name'];
             $_to_email = $_POST['email'];
             $_message = "Thank you for signing up.  <a href='http://localhost:8888/validate-user?key=$user_verification_key'>Click here to verify your account </a>";
             require_once(__DIR__."/../private/send_email.php");
-                
+
+            _res('200', $response);
+            
         } catch(Exception $ex){
             http_response_code(500);
             $errResponse = ["info" => 'System under maintainance '.__LINE__];

@@ -52,7 +52,7 @@
                 name="phone" 
                 type="text" 
                 placeholder="Enter your phone number"
-                data-validate="int"
+                data-validate="str"
                 data-min="8"
                 data-max="8"
             >
